@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Jumping Sumo Tchekoto Control Page</title>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/script.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+        <div id="left">
+            <p1>Jumping Sumo ToolBox</p1><br>
+            <a href="#" class="myButton" onclick="jsJumpFunction();">Jump</a><br>
+            <a href="#" class="myButton" onclick="jsLongJumpFunction();">LongJump</a><br>
+            <p1>Special moves</p1><br>
+            <a href="#" class="myButton" onclick="jsSpinFunction();">Spin</a><br>
+            <a href="#" class="myButton" onclick="jsSlowShakeFunction();">SlowShake</a><br>
+            <a href="#" class="myButton" onclick="jsMetronomeFunction();">Metronome</a><br>
+            <p1>Change Posture</p1>
+            <a href="#" class="myButton" onclick="postureStanding();">Standing</a><br>
+            <a href="#" class="myButton" onclick="postureJumper();">Jumper</a><br>
+            <a href="#" class="myButton" onclick="postureKicker();">Kicker</a><br>
+            <p0>
+                HINT : use the arrow keys to move the drone and the buttons on the left for special moves.
+            </p0>
+            <br><br>
+            <div id="myProgress">
+                <div id="myBar"></div>
+            </div>
+            <p1>
+                Battery Level = <normal id='battery_num' class="text">-1</normal> %
+            </p1>
+        </div>
+
+        <div id="right">
+            <img src="/video/0" alt="Stream" height=100%>
+        </div>
+
+
+    </body>
+</html>

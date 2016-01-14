@@ -1,0 +1,113 @@
+body {
+    background-color: #0d0d0d;
+}
+
+h1 {
+    color: black;
+    text-align: center;
+}
+
+p {
+    font-family: "Times New Roman";
+    font-size: 20px;
+}
+
+html, body {
+    height: auto;
+    margin: 0;
+    font-size: 20px;
+}
+
+p0{
+    height: 100%;
+    margin: 0;
+    font-size: 15px;
+}
+
+p1{
+    height: 100%;
+    margin: 0;
+    font-size: 20px;
+}
+
+normal{
+    height: 100%;
+    margin: 0;
+    font-size: 20px;
+}
+
+#left {
+    width: 20%;
+    height: 100%;
+    position: fixed;
+    background: #bfbfbf ;
+}
+#right {
+    width: 80%;
+    height: 95%;
+    position: absolute;
+    right: 0;
+}
+
+.myButton {
+	-moz-box-shadow:inset 0px -3px 7px 0px #29bbff;
+	-webkit-box-shadow:inset 0px -3px 7px 0px #29bbff;
+	box-shadow:inset 0px -3px 7px 0px #29bbff;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #2dabf9), color-stop(1, #0688fa));
+	background:-moz-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+	background:-webkit-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+	background:-o-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+	background:-ms-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+	background:linear-gradient(to bottom, #2dabf9 5%, #0688fa 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#2dabf9', endColorstr='#0688fa',GradientType=0);
+	background-color:#2dabf9;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	border:1px solid #0b0e07;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:9px 23px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #263666;
+    width:80%;
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0688fa), color-stop(1, #2dabf9));
+	background:-moz-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+	background:-webkit-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+	background:-o-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+	background:-ms-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+	background:linear-gradient(to bottom, #0688fa 5%, #2dabf9 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0688fa', endColorstr='#2dabf9',GradientType=0);
+	background-color:#0688fa;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+.container {
+    width: 40%;
+    height: 40%;
+    background: #444;
+    margin: 0 auto;
+}
+
+
+
+#myProgress {
+  width: 80%;
+  height: 20px;
+  position: relative;
+  border: 1px solid #ccc;
+}
+#myBar {
+  width: 10px;
+  height: 100%;
+  position: absolute;
+  background-color: green;
+}
