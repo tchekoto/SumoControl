@@ -10,4 +10,4 @@ To run :
 - run : node index.js
 
 Then connect to http://127.0.0.1:3000 in Chrome.
-Use the arrow keys to move your drone, space for high jump, shift for tap and the left button ont the page for other moves.
+Use the arrow keys to move your drone, space for high jump, shift for tap and the top buttons on the page for other moves.
