@@ -5,36 +5,68 @@
 <title>Jumping Sumo Tchekoto Control Page</title>
 <script src="/socket.io/socket.io.js"></script>
 <script src="/js/script.js"></script>
-<link rel="stylesheet" href="css/style.css">
+<link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-        <div id="left">
-            <p1>Jumping Sumo ToolBox</p1><br>
-            <a href="#" class="myButton" onclick="jsJumpFunction();">Jump</a><br>
-            <a href="#" class="myButton" onclick="jsLongJumpFunction();">LongJump</a><br>
-            <p1>Special moves</p1><br>
-            <a href="#" class="myButton" onclick="jsSpinFunction();">Spin</a><br>
-            <a href="#" class="myButton" onclick="jsSlowShakeFunction();">SlowShake</a><br>
-            <a href="#" class="myButton" onclick="jsMetronomeFunction();">Metronome</a><br>
-            <p1>Change Posture</p1>
-            <a href="#" class="myButton" onclick="postureStanding();">Standing</a><br>
-            <a href="#" class="myButton" onclick="postureJumper();">Jumper</a><br>
-            <a href="#" class="myButton" onclick="postureKicker();">Kicker</a><br>
-            <p0>
-                HINT : use the arrow keys to move the drone and the buttons on the left for special moves.
-            </p0>
-            <br><br>
-            <div id="myProgress">
-                <div id="myBar"></div>
-            </div>
-            <p1>
-                Battery Level = <normal id='battery_num' class="text">-1</normal> %
-            </p1>
-        </div>
+<div class="col-lg-10 col-lg-offset-1">
+            <center>
+                <div class="page-header">
+                    <h1>Jumping Sumo <small>Control Web App</small></h1>
+                </div>
 
-        <div id="right">
-            <img src="/video/0" alt="Stream" height=100%>
-        </div>
+                <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" class="btn btn-default" onclick="jsJumpFunction();">
+                        <span class="glyphicon glyphicon-open" aria-hidden="true"></span> Jump
+                    </button>
+                    <button type="button" class="btn btn-default" onclick="jsLongJumpFunction();">
+                        <span class="glyphicon glyphicon-export" aria-hidden="true"></span> Long Jump
+                    </button>
+                    <button type="button" class="btn btn-default" onclick="jsSpinFunction();">
+                        <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Spin
+                    </button>
+                </div>
+                <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" class="btn btn-default" onclick="jsSlowShakeFunction();">
+                        <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span> SlowShake
+                    </button>
+                    <button type="button" class="btn btn-default" onclick="jsMetronomeFunction();">
+                        <span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> Metronome
+                    </button>
+                </div>
+                <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" class="btn btn-default" onclick="postureStanding();">
+                        <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span> Standing
+                    </button>
+                    <button type="button" class="btn btn-default" onclick="postureJumper();">
+                        <span class="glyphicon glyphicon-export" aria-hidden="true"></span> Jumper
+                    </button>
+                    <button type="button" class="btn btn-default" onclick="postureKicker();">
+                        <span class="glyphicon glyphicon-copy" aria-hidden="true"></span> Kicker
+                    </button>
+
+
+                </div>
+            </center>
+                <br>
+                <div id="mybar" class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
+                </div>
+            <center>
+                <p1>
+                    Battery Level = <normal id='battery_num' class="text">-1</normal> %
+                </p1>
+
+                <div class="media-body">
+                    <img src="/video/0" class="img-responsive" alt="Video Stream">
+                </div>
+
+                <footer>
+                    HINT : use the arrow keys to move the drone and the buttons on the left for special moves.
+                </footer>
+            </center>
+    </div>
+
+
 
 
     </body>

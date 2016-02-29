@@ -3,14 +3,18 @@ socket.on('data', function (data) {
   console.log(data);
 });
 
+var alerted = false;
+
 socket.on('battery', function (data) {
-  console.log(data);
   var element = document.getElementById("battery_num");
   element.innerHTML = data.toString();
-  var elem = document.getElementById("myBar");
+  var elem = document.getElementById("mybar");
   elem.style.width = data.toString() + '%';
   if(data < 10){
-      alert("Drone Battery Low");
+      if(alerted === false){
+            alert("Drone Battery Low");
+            alerted=true;
+      }
   }
 });
 
