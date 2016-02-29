@@ -9,6 +9,7 @@
   "author": "Tchekoto",
   "license": "MIT",
   "dependencies": {
+    "bootstrap": "^3.3.6",
     "express": "^4.13.3",
     "mjpeg-server": "^0.2.1",
     "node-sumo": "git+https://github.com/forgeByAcision/node-sumo.git",

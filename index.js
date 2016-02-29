@@ -10,6 +10,7 @@ var path = __dirname + '/public/';
 app.use('/js', express.static(__dirname + '/public/js'));
 app.use('/css', express.static(__dirname + '/public/css'));
 app.use('/img', express.static(__dirname + '/public/img'));
+app.use('/fonts', express.static(__dirname + '/public/fonts'));
 
 var PORT = 3000;
 
