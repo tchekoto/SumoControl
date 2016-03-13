@@ -1,73 +1,93 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
-<meta charset="UTF-8">
-<title>Jumping Sumo Tchekoto Control Page</title>
-<script src="/socket.io/socket.io.js"></script>
-<script src="/js/script.js"></script>
-<link href="css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jumping Sumo Tchekoto Control Page</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/script.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 </head>
+
 <body>
-<div class="col-lg-10 col-lg-offset-1">
-            <center>
-                <div class="page-header">
-                    <h1>Jumping Sumo <small>Control Web App</small></h1>
-                </div>
 
-                <div class="btn-group" role="group" aria-label="...">
-                    <button type="button" class="btn btn-default" onclick="jsJumpFunction();">
-                        <span class="glyphicon glyphicon-open" aria-hidden="true"></span> Jump
-                    </button>
-                    <button type="button" class="btn btn-default" onclick="jsLongJumpFunction();">
-                        <span class="glyphicon glyphicon-export" aria-hidden="true"></span> Long Jump
-                    </button>
-                    <button type="button" class="btn btn-default" onclick="jsSpinFunction();">
-                        <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Spin
-                    </button>
-                </div>
-                <div class="btn-group" role="group" aria-label="...">
-                    <button type="button" class="btn btn-default" onclick="jsSlowShakeFunction();">
-                        <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span> SlowShake
-                    </button>
-                    <button type="button" class="btn btn-default" onclick="jsMetronomeFunction();">
-                        <span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> Metronome
-                    </button>
-                </div>
-                <div class="btn-group" role="group" aria-label="...">
-                    <button type="button" class="btn btn-default" onclick="postureStanding();">
-                        <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span> Standing
-                    </button>
-                    <button type="button" class="btn btn-default" onclick="postureJumper();">
-                        <span class="glyphicon glyphicon-export" aria-hidden="true"></span> Jumper
-                    </button>
-                    <button type="button" class="btn btn-default" onclick="postureKicker();">
-                        <span class="glyphicon glyphicon-copy" aria-hidden="true"></span> Kicker
-                    </button>
-
-
-                </div>
-            </center>
-                <br>
-                <div id="mybar" class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
-                </div>
-            <center>
-                <p1>
-                    Battery Level = <normal id='battery_num' class="text">-1</normal> %
-                </p1>
-
-                <div class="media-body">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand">Jumping Sumo - Control Web App</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container container-full">
+        <div class="row">
+            <div class="col-xs-2 col-sm-2">
+                <h2>Status</h2>
+                <ul class="list-group">
+                    <li class="list-group-item hardware-info">
+                        <i class="fa fa-battery-full"></i>
+                        <progress id="battery-value" value="50" max="100"></progress>
+                        <span id="battery_num">50%</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xs-10 col-sm-8">
+                <div id="media">
                     <img src="/video/0" class="img-responsive" alt="Video Stream">
                 </div>
+            </div>
+            <div class="col-xs-2 col-sm-2">
+                <h2>Actions</h2>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <button type="button" class="btn btn-default" onclick="jsJumpFunction();">
+                            <span class="glyphicon glyphicon-open" aria-hidden="true"></span> Jump
+                        </button>
+                    </li>
+                    <li class="list-group-item">
+                        <button type="button" class="btn btn-default" onclick="jsLongJumpFunction();">
+                            <span class="glyphicon glyphicon-export" aria-hidden="true"></span> Long Jump
+                        </button>
+                    </li>
+                    <li class="list-group-item">
+                        <button type="button" class="btn btn-default" onclick="jsSpinFunction();">
+                            <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Spin
+                        </button>
+                    </li>
+                </ul>
 
-                <footer>
-                    HINT : use the arrow keys to move the drone and the buttons on the left for special moves.
-                </footer>
-            </center>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <button type="button" class="btn btn-default" onclick="postureStanding();">
+                            <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span> Standing
+                        </button>
+                    </li>
+                    <li class="list-group-item">
+                        <button type="button" class="btn btn-default" onclick="postureJumper();">
+                            <span class="glyphicon glyphicon-export" aria-hidden="true"></span> Jumper
+                        </button>
+                    </li>
+                    <li class="list-group-item">
+                        <button type="button" class="btn btn-default" onclick="postureKicker();">
+                            <span class="glyphicon glyphicon-copy" aria-hidden="true"></span> Kicker
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
     </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted">
+                HINT : use the arrow keys to move the drone and the buttons on the left for special moves.
+            </p>
+        </div>
+    </footer>
+</body>
 
-
-
-
-    </body>
 </html>
