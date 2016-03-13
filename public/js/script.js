@@ -1,21 +1,25 @@
 var socket = io('http://localhost:3000');
 socket.on('data', function (data) {
-  console.log(data);
+    console.log(data);
 });
 
 var alerted = false;
 
 socket.on('battery', function (data) {
-  var element = document.getElementById("battery_num");
-  element.innerHTML = data.toString();
-  var elem = document.getElementById("mybar");
-  elem.style.width = data.toString() + '%';
-  if(data < 10){
-      if(alerted === false){
+    var element = document.getElementById("battery_num");
+    element.innerHTML = data.toString();
+    var elem = document.getElementById("mybar");
+    elem.style.width = data.toString() + '%';
+    if (data < 10) {
+        if (alerted === false) {
             alert("Drone Battery Low");
-            alerted=true;
-      }
-  }
+            alerted = true;
+        }
+    }
+
+    var progress = document.getElementById("battery-value");
+    progress.setAttribute("value", data);
+
 });
 
 /// TOOLBOX moves
@@ -42,6 +46,7 @@ function jsMetronomeFunction() {
 function postureStanding() {
     socket.emit('action', 'standing');
 }
+
 function postureJumper() {
     socket.emit('action', 'jumper');
 }
@@ -51,45 +56,45 @@ function postureKicker() {
 }
 
 /// MOVE with keyboard
-document.onkeydown = function(e) {
-  switch (e.keyCode) {
-      case 16:
-          socket.emit('action', 'tap');
-          break;
-      case 27:
-          socket.emit('action', 'stop');
-          break;
-      case 32:
-          socket.emit('action', 'jump');
-          break;
-      case 37:
-          socket.emit('keydown', 'left');
-          break;
-      case 38:
-          socket.emit('keydown', 'forward');
-          break;
-      case 39:
-          socket.emit('keydown', 'right');
-          break;
-      case 40:
-          socket.emit('keydown', 'backward');
-          break;
-  }
+document.onkeydown = function (e) {
+    switch (e.keyCode) {
+    case 16:
+        socket.emit('action', 'tap');
+        break;
+    case 27:
+        socket.emit('action', 'stop');
+        break;
+    case 32:
+        socket.emit('action', 'jump');
+        break;
+    case 37:
+        socket.emit('keydown', 'left');
+        break;
+    case 38:
+        socket.emit('keydown', 'forward');
+        break;
+    case 39:
+        socket.emit('keydown', 'right');
+        break;
+    case 40:
+        socket.emit('keydown', 'backward');
+        break;
+    }
 };
 
-document.onkeyup = function(e) {
-  switch (e.keyCode) {
-      case 37:
-          socket.emit('keyup', 'left');
-          break;
-      case 38:
-          socket.emit('keyup', 'forward');
-          break;
-      case 39:
-          socket.emit('keyup', 'right');
-          break;
-      case 40:
-          socket.emit('keyup', 'backward');
-          break;
-  }
+document.onkeyup = function (e) {
+    switch (e.keyCode) {
+    case 37:
+        socket.emit('keyup', 'left');
+        break;
+    case 38:
+        socket.emit('keyup', 'forward');
+        break;
+    case 39:
+        socket.emit('keyup', 'right');
+        break;
+    case 40:
+        socket.emit('keyup', 'backward');
+        break;
+    }
 };
