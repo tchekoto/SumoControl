@@ -7,15 +7,7 @@ var alerted = false;
 
 socket.on('battery', function (data) {
     var element = document.getElementById("battery_num");
-    element.innerHTML = data.toString();
-    var elem = document.getElementById("mybar");
-    elem.style.width = data.toString() + '%';
-    if (data < 10) {
-        if (alerted === false) {
-            alert("Drone Battery Low");
-            alerted = true;
-        }
-    }
+    element.innerHTML = data.toString() + '%';
 
     var progress = document.getElementById("battery-value");
     progress.setAttribute("value", data);
