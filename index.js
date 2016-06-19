@@ -26,7 +26,7 @@ function Main() {
 
     http.listen(PORT, function () {
         console.log('HTTP Server listening on *:' + PORT);
-        open('http://127.0.0.1:' + PORT)
+        open('http://127.0.0.1:' + PORT);
     });
 
     io.on('connection', function (socket) {
