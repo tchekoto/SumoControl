@@ -1,19 +1,20 @@
 {
-  "name": "sumocontrol",
-  "version": "0.0.1",
-  "description": "Server which provides a webpage from controlling jumping sumo minidrone from Parrot",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Tchekoto",
-  "license": "MIT",
-  "dependencies": {
-    "bootstrap": "^3.3.6",
-    "express": "^4.13.3",
-    "mjpeg-server": "^0.2.1",
-    "node-sumo": "git+https://github.com/forgeByAcision/node-sumo.git",
-    "open": "0.0.5",
-    "socket.io": "^1.3.7"
-  }
+    "name": "sumocontrol",
+    "version": "0.0.1",
+    "description": "Server which provides a webpage from controlling jumping sumo minidrone from Parrot",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Tchekoto",
+    "license": "MIT",
+    "dependencies": {
+        "bootstrap": "^3.3.6",
+        "express": "^4.13.3",
+        "mjpeg-server": "^0.2.1",
+        "node-sumo": "git+https://github.com/forgeByAcision/node-sumo.git",
+        "open": "0.0.5",
+        "socket.io": "^1.3.7"
+    }
 }

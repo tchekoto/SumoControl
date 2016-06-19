@@ -7,7 +7,7 @@ To install, run :
 
 To run :
 - connect to the drone wifi
-- run : node index.js
+- run : npm start
 
-Then connect to http://127.0.0.1:3000 in Chrome.
+Then your browser will open http://127.0.0.1:3000.
 Use the arrow keys to move your drone, space for high jump, shift for tap and the top buttons on the page for other moves.
