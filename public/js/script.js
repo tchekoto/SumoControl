@@ -47,9 +47,38 @@ function postureKicker() {
     socket.emit('action', 'kicker');
 }
 
+function tap() {
+    socket.emit('action', 'tap');
+}
+
+function ondulation() {
+    socket.emit('action', 'ondulation');
+}
+
+function spinJump() {
+    socket.emit('action', 'spinjump');
+}
+
+function spinToPosture() {
+    socket.emit('action', 'spintoposture');
+}
+
+function spiral() {
+    socket.emit('action', 'spiral');
+}
+
+function slalom() {
+    socket.emit('action', 'slalom');
+}
+
+
+
 /// MOVE with keyboard
 document.onkeydown = function (e) {
     switch (e.keyCode) {
+    case 69:
+        socket.emit('action', 'spinjump');
+        break;
     case 16:
         socket.emit('action', 'tap');
         break;
